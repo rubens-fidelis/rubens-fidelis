@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubens Fidelis — Software Architect & Consultant</title>
+    <meta name="description" content="Software Architect with 17+ years of experience. Available for consulting, freelance projects, and technical leadership. Node.js, TypeScript, systems design.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="blueprint-grid"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="nav-logo">RF_</a>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="#services"><span data-lang-en>Services</span><span data-lang-pt>Servi&ccedil;os</span></a></li>
+                <li><a href="#about"><span data-lang-en>About</span><span data-lang-pt>Sobre</span></a></li>
+                <li><a href="#skills"><span data-lang-en>Skills</span><span data-lang-pt>Habilidades</span></a></li>
+                <li><a href="#experience"><span data-lang-en>Experience</span><span data-lang-pt>Experi&ecirc;ncia</span></a></li>
+                <li><a href="#contact"><span data-lang-en>Contact</span><span data-lang-pt>Contato</span></a></li>
+            </ul>
+            <div class="lang-toggle">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="pt-BR" onclick="setLang('pt-BR')">PT</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="hero" id="hero">
+            <div class="hero-label">
+                <span data-lang-en>Software Architect &amp; Consultant</span>
+                <span data-lang-pt>Arquiteto de Software &amp; Consultor</span>
+            </div>
+            <h1 class="hero-name">Rubens<br><em>Fidelis</em></h1>
+            <p class="hero-title" data-lang-en>Building robust systems and high-performing teams. Available for consulting, architecture reviews, and freelance projects.</p>
+            <p class="hero-title" data-lang-pt>Construindo sistemas robustos e equipes de alta performance. Dispon&iacute;vel para consultoria, revis&otilde;es de arquitetura e projetos freelance.</p>
+
+            <div class="hero-cta">
+                <a href="#contact" class="btn-primary">
+                    <span data-lang-en>Start a Project</span>
+                    <span data-lang-pt>Iniciar um Projeto</span>
+                </a>
+                <a href="#experience" class="btn-secondary">
+                    <span data-lang-en>View Experience</span>
+                    <span data-lang-pt>Ver Experi&ecirc;ncia</span>
+                </a>
+            </div>
+
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <span class="hero-meta-label">
+                        <span data-lang-en>Available for</span>
+                        <span data-lang-pt>Dispon&iacute;vel para</span>
+                    </span>
+                    <span class="hero-meta-value">
+                        <span data-lang-en>Consulting &amp; Freelance</span>
+                        <span data-lang-pt>Consultoria &amp; Freelance</span>
+                    </span>
+                </div>
+                <div class="hero-meta-item">
+                    <span class="hero-meta-label">
+                        <span data-lang-en>Based in</span>
+                        <span data-lang-pt>Localiza&ccedil;&atilde;o</span>
+                    </span>
+                    <span class="hero-meta-value">Paran&aacute;, Brazil</span>
+                </div>
+                <div class="hero-meta-item">
+                    <span class="hero-meta-label">
+                        <span data-lang-en>Experience</span>
+                        <span data-lang-pt>Experi&ecirc;ncia</span>
+                    </span>
+                    <span class="hero-meta-value">
+                        <span data-lang-en>17+ Years</span>
+                        <span data-lang-pt>17+ Anos</span>
+                    </span>
+                </div>
+                <div class="hero-meta-item">
+                    <span class="hero-meta-label">
+                        <span data-lang-en>Focus</span>
+                        <span data-lang-pt>Foco</span>
+                    </span>
+                    <span class="hero-meta-value">
+                        <span data-lang-en>Architecture &amp; Leadership</span>
+                        <span data-lang-pt>Arquitetura &amp; Lideran&ccedil;a</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="hero-scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="services" id="services">
+            <div class="section-header reveal">
+                <span class="section-number">01</span>
+                <h2 class="section-title">
+                    <span data-lang-en>Services</span>
+                    <span data-lang-pt>Servi&ccedil;os</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon">&lbrace; &rbrace;</div>
+                    <h3 class="service-title">
+                        <span data-lang-en>Software Architecture</span>
+                        <span data-lang-pt>Arquitetura de Software</span>
+                    </h3>
+                    <p class="service-desc" data-lang-en>End-to-end architecture design following clean architecture principles. Data modeling, systems design, and technical specifications that set your team up for success.</p>
+                    <p class="service-desc" data-lang-pt>Design de arquitetura end-to-end seguindo princ&iacute;pios de clean architecture. Modelagem de dados, design de sistemas e especifica&ccedil;&otilde;es t&eacute;cnicas que preparam sua equipe para o sucesso.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">&gt;_</div>
+                    <h3 class="service-title">
+                        <span data-lang-en>Technical Consulting</span>
+                        <span data-lang-pt>Consultoria T&eacute;cnica</span>
+                    </h3>
+                    <p class="service-desc" data-lang-en>Architecture reviews, performance audits, and technology strategy. I help identify bottlenecks, evaluate technical decisions, and plan scalable solutions for your product.</p>
+                    <p class="service-desc" data-lang-pt>Revis&otilde;es de arquitetura, auditorias de performance e estrat&eacute;gia tecnol&oacute;gica. Ajudo a identificar gargalos, avaliar decis&otilde;es t&eacute;cnicas e planejar solu&ccedil;&otilde;es escal&aacute;veis para seu produto.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">&Delta;</div>
+                    <h3 class="service-title">
+                        <span data-lang-en>Team &amp; Process</span>
+                        <span data-lang-pt>Equipe &amp; Processos</span>
+                    </h3>
+                    <p class="service-desc" data-lang-en>Workshops, documentation strategies, and development lifecycle optimization. I help teams reduce uncertainty, improve velocity, and deliver higher-quality features.</p>
+                    <p class="service-desc" data-lang-pt>Workshops, estrat&eacute;gias de documenta&ccedil;&atilde;o e otimiza&ccedil;&atilde;o do ciclo de desenvolvimento. Ajudo equipes a reduzir incertezas, melhorar velocidade e entregar funcionalidades de maior qualidade.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="about" id="about">
+            <div class="section-header reveal">
+                <span class="section-number">02</span>
+                <h2 class="section-title">
+                    <span data-lang-en>About</span>
+                    <span data-lang-pt>Sobre</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text reveal">
+                    <p data-lang-en>I'm a <strong>Software Architect</strong> with over 10 years of hands-on experience in software development with Node.js, and a proven track record of translating business requirements into <strong>architecture decisions</strong> and technical specifications.</p>
+                    <p data-lang-pt>Sou um <strong>Arquiteto de Software</strong> com mais de 10 anos de experi&ecirc;ncia pr&aacute;tica em desenvolvimento com Node.js e um hist&oacute;rico comprovado de traduzir requisitos de neg&oacute;cio em <strong>decis&otilde;es de arquitetura</strong> e especifica&ccedil;&otilde;es t&eacute;cnicas.</p>
+
+                    <p data-lang-en>My expertise lies at the intersection of technical depth and clear communication &mdash; I use documentation, diagrams, and workshops to align teams and eliminate uncertainty, resulting in <strong>high-quality features</strong> delivered efficiently.</p>
+                    <p data-lang-pt>Minha especialidade est&aacute; na intersec&ccedil;&atilde;o entre profundidade t&eacute;cnica e comunica&ccedil;&atilde;o clara &mdash; uso documenta&ccedil;&atilde;o, diagramas e workshops para alinhar equipes e eliminar incertezas, resultando em <strong>funcionalidades de alta qualidade</strong> entregues com efici&ecirc;ncia.</p>
+
+                    <p data-lang-en>Skilled in <strong>data modeling</strong> and <strong>systems design</strong>, I bridge the gap between technical teams and non-technical stakeholders, ensuring everyone shares a common understanding of challenges, risks, and opportunities. From building government systems in Brazil to architecting enterprise tools for US-based manufacturers, my career has been a continuous expansion of scope &mdash; across <strong>industries, technologies, and leadership responsibilities</strong>.</p>
+                    <p data-lang-pt>Especialista em <strong>modelagem de dados</strong> e <strong>design de sistemas</strong>, conecto equipes t&eacute;cnicas e stakeholders n&atilde;o-t&eacute;cnicos, garantindo que todos compartilhem um entendimento comum dos desafios, riscos e oportunidades. De construir sistemas governamentais no Brasil a arquitetar ferramentas empresariais para fabricantes nos EUA, minha carreira tem sido uma expans&atilde;o cont&iacute;nua de escopo &mdash; em <strong>ind&uacute;strias, tecnologias e responsabilidades de lideran&ccedil;a</strong>.</p>
+                </div>
+                <div class="about-stats reveal">
+                    <div class="stat-card">
+                        <div class="stat-number">17+</div>
+                        <div class="stat-label">
+                            <span data-lang-en>Years in Software</span>
+                            <span data-lang-pt>Anos em Software</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">
+                            <span data-lang-en>Industries Served</span>
+                            <span data-lang-pt>Ind&uacute;strias Atendidas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="skills" id="skills">
+            <div class="section-header reveal">
+                <span class="section-number">03</span>
+                <h2 class="section-title">
+                    <span data-lang-en>Expertise</span>
+                    <span data-lang-pt>Expertise</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-group reveal">
+                    <div class="skill-group-title">Languages &amp; Runtime</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">Bash</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal">
+                    <div class="skill-group-title">Frontend</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Electron.js</span>
+                        <span class="skill-tag">WordPress</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal">
+                    <div class="skill-group-title">Backend &amp; Data</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">Socket.io</span>
+                        <span class="skill-tag">ZeroMQ</span>
+                        <span class="skill-tag">Gremlin (Apache Tinkerpop)</span>
+                        <span class="skill-tag">CodeIgniter</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal">
+                    <div class="skill-group-title">Databases</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Redis</span>
+                        <span class="skill-tag">Amazon Neptune</span>
+                        <span class="skill-tag">JanusGraph</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal">
+                    <div class="skill-group-title">
+                        <span data-lang-en>Architecture &amp; Design</span>
+                        <span data-lang-pt>Arquitetura &amp; Design</span>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Systems Design</span>
+                        <span class="skill-tag">Clean Architecture</span>
+                        <span class="skill-tag">Data Modeling</span>
+                        <span class="skill-tag">Microservices</span>
+                        <span class="skill-tag">Event-Driven</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal">
+                    <div class="skill-group-title">
+                        <span data-lang-en>Leadership &amp; Process</span>
+                        <span data-lang-pt>Lideran&ccedil;a &amp; Processos</span>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Technical Leadership</span>
+                        <span class="skill-tag">Requirements Engineering</span>
+                        <span class="skill-tag">Documentation</span>
+                        <span class="skill-tag">Mentoring</span>
+                        <span class="skill-tag">Client Relations</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="experience" id="experience">
+            <div class="section-header reveal">
+                <span class="section-number">04</span>
+                <h2 class="section-title">
+                    <span data-lang-en>Experience</span>
+                    <span data-lang-pt>Experi&ecirc;ncia</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline">
+
+                <div class="timeline-group">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-group-header">
+                        <h3 class="timeline-company">Venturus</h3>
+                        <span class="timeline-group-tenure">Jun 2022 &mdash; Present &middot; 3 yr 10 mo</span>
+                    </div>
+                    <div class="timeline-group-roles">
+
+                        <div class="timeline-role-item current">
+                            <div class="timeline-role-date">
+                                <span data-lang-en>Nov 2024 &mdash; Present</span>
+                                <span data-lang-pt>Nov 2024 &mdash; Atual</span>
+                                <span class="duration">
+                                    <span data-lang-en>Current</span>
+                                    <span data-lang-pt>Atual</span>
+                                </span>
+                            </div>
+                            <div class="timeline-role">Software Architect</div>
+                            <div class="timeline-location">Campinas, S&atilde;o Paulo, Brazil</div>
+                            <div class="timeline-description">
+                                <ul>
+                                    <li data-lang-en>Owning the end-to-end architecture of a complex enterprise tool for a major US-based manufacturing company, supporting cross-functional teams across development, QA, DevOps, and UI/UX</li>
+                                    <li data-lang-pt>Respons&aacute;vel pela arquitetura end-to-end de uma ferramenta empresarial complexa para uma grande empresa de manufatura nos EUA, apoiando equipes multifuncionais de desenvolvimento, QA, DevOps e UI/UX</li>
+                                    <li data-lang-en>Leading all client-facing requirement sessions, translating business needs into detailed architecture documentation that drives sprint planning and reduces ambiguity for the team</li>
+                                    <li data-lang-pt>Liderando todas as sess&otilde;es de requisitos com o cliente, traduzindo necessidades de neg&oacute;cio em documenta&ccedil;&atilde;o detalhada de arquitetura que direciona o planejamento de sprints e reduz ambiguidade para a equipe</li>
+                                    <li data-lang-en>Defining long-term technical strategy and roadmap, working ahead of the team to ensure architectural decisions scale with the product&rsquo;s growing complexity</li>
+                                    <li data-lang-pt>Definindo estrat&eacute;gia t&eacute;cnica e roadmap de longo prazo, trabalhando &agrave; frente da equipe para garantir que decis&otilde;es arquiteturais escalem com a crescente complexidade do produto</li>
+                                </ul>
+                                <div class="timeline-tech">
+                                    <span>Node.js</span><span>TypeScript</span><span>Clean Architecture</span><span>AWS</span><span>Microservices</span><span>Graph Databases</span><span>Gremlin</span><span>REST API</span><span>Software Architecture</span><span>Scrum</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-role-item">
+                            <div class="timeline-role-date">
+                                Sep 2022 &mdash; Nov 2024
+                                <span class="duration">2 yr 3 mo</span>
+                            </div>
+                            <div class="timeline-role">Software Development Team Lead</div>
+                            <div class="timeline-location">Campinas, S&atilde;o Paulo, Brazil</div>
+                            <div class="timeline-description">
+                                <ul>
+                                    <li data-lang-en>Introduced documentation-driven development gates that significantly reduced meeting overhead and eliminated requirement ambiguity before sprint planning</li>
+                                    <li data-lang-pt>Introduziu gates de desenvolvimento orientados a documenta&ccedil;&atilde;o que reduziram significativamente a sobrecarga de reuni&otilde;es e eliminaram ambiguidade de requisitos antes do planejamento de sprints</li>
+                                    <li data-lang-en>Authored detailed technical specifications for every feature, enabling teams to break stories and estimate work with high accuracy</li>
+                                    <li data-lang-pt>Elaborou especifica&ccedil;&otilde;es t&eacute;cnicas detalhadas para cada funcionalidade, permitindo que equipes quebrassem hist&oacute;rias e estimassem trabalho com alta precis&atilde;o</li>
+                                    <li data-lang-en>Ran workshops and presentations on Node.js, TypeScript, and Gremlin, directly improving team confidence and productivity when facing technical challenges</li>
+                                    <li data-lang-pt>Conduziu workshops e apresenta&ccedil;&otilde;es sobre Node.js, TypeScript e Gremlin, melhorando diretamente a confian&ccedil;a e produtividade da equipe diante de desafios t&eacute;cnicos</li>
+                                    <li data-lang-en>Achieved order-of-magnitude performance gains by redesigning graph database queries and refactoring critical code paths</li>
+                                    <li data-lang-pt>Alcan&ccedil;ou ganhos de performance de ordem de grandeza reprojetando consultas em banco de dados de grafos e refatorando caminhos cr&iacute;ticos de c&oacute;digo</li>
+                                </ul>
+                                <div class="timeline-tech">
+                                    <span>Node.js</span><span>TypeScript</span><span>Gremlin</span><span>Jest</span><span>Miro</span><span>AWS</span><span>Microservices</span><span>Graph Databases</span><span>REST API</span><span>Scrum</span><span>Event Driven</span><span>Git</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-role-item">
+                            <div class="timeline-role-date">
+                                Jun 2022 &mdash; Sep 2022
+                                <span class="duration">4 mo</span>
+                            </div>
+                            <div class="timeline-role">Senior Software Developer</div>
+                            <div class="timeline-location">Campinas, S&atilde;o Paulo, Brazil</div>
+                            <div class="timeline-description">
+                                <ul>
+                                    <li data-lang-en>Promoted to Team Lead after 4 months based on early architectural contributions that shaped the project&rsquo;s technical foundation</li>
+                                    <li data-lang-pt>Promovido a Team Lead ap&oacute;s 4 meses com base em contribui&ccedil;&otilde;es arquiteturais iniciais que moldaram a base t&eacute;cnica do projeto</li>
+                                    <li data-lang-en>Architected a WebSocket event-driven microservice with Socket.io that enabled a simultaneous editing feature implemented over a year later with minimal effort</li>
+                                    <li data-lang-pt>Arquitetou um microsservi&ccedil;o orientado a eventos WebSocket com Socket.io que possibilitou uma funcionalidade de edi&ccedil;&atilde;o simult&acirc;nea implementada mais de um ano depois com esfor&ccedil;o m&iacute;nimo</li>
+                                    <li data-lang-en>Designed the base graph data model that became the backbone for organizing the system&rsquo;s massive and complex dataset</li>
+                                    <li data-lang-pt>Projetou o modelo de dados em grafo base que se tornou a espinha dorsal para organizar o enorme e complexo conjunto de dados do sistema</li>
+                                    <li data-lang-en>Built a mock server and internal dev tooling that gave the QA team full control over 3rd-party integration test scenarios</li>
+                                    <li data-lang-pt>Construiu um servidor mock e ferramentas internas de desenvolvimento que deram &agrave; equipe de QA controle total sobre cen&aacute;rios de teste de integra&ccedil;&otilde;es de terceiros</li>
+                                </ul>
+                                <div class="timeline-tech">
+                                    <span>Node.js</span><span>TypeScript</span><span>Socket.io</span><span>PM2</span><span>Bash</span><span>PostgreSQL</span><span>AWS</span><span>Gremlin</span><span>Microservices</span><span>Graph Databases</span><span>REST API</span><span>Scrum</span><span>Git</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">
+                        Apr 2021 &mdash; Jun 2022
+                        <span class="duration">1 yr 3 mo</span>
+                    </div>
+                    <h3 class="timeline-company">Saque e Pague</h3>
+                    <div class="timeline-role">Senior Software Developer</div>
+                    <div class="timeline-location">Porto Alegre, Rio Grande do Sul, Brazil</div>
+                    <div class="timeline-description">
+                        <ul>
+                            <li data-lang-en>Led the ground-up rebuild of the company&rsquo;s ATM client application, delivering a modern stack that improved maintainability and deployment speed</li>
+                            <li data-lang-pt>Liderou a reconstru&ccedil;&atilde;o do zero do aplicativo cliente de ATM da empresa, entregando uma stack moderna que melhorou a manuten&ccedil;&atilde;o e velocidade de deploy</li>
+                            <li data-lang-en>Engineered a backend service layer using Node.js, Socket.io, and ZeroMQ to handle real-time hardware communication with isolated, maintainable code</li>
+                            <li data-lang-pt>Desenvolveu uma camada de servi&ccedil;o backend usando Node.js, Socket.io e ZeroMQ para comunica&ccedil;&atilde;o em tempo real com hardware com c&oacute;digo isolado e manten&iacute;vel</li>
+                            <li data-lang-en>Built a hardware emulation layer that gave QA teams full control over test scenarios, enabling reliable automated testing without physical ATM devices</li>
+                            <li data-lang-pt>Construiu uma camada de emula&ccedil;&atilde;o de hardware que deu &agrave;s equipes de QA controle total sobre cen&aacute;rios de teste, permitindo testes automatizados confi&aacute;veis sem dispositivos ATM f&iacute;sicos</li>
+                            <li data-lang-en>Architected the frontend with React.js and TypeScript using native State and Context for hardware communication, and delivered a separate admin application for smaller, independent deployments</li>
+                            <li data-lang-pt>Arquitetou o frontend com React.js e TypeScript usando State e Context nativos para comunica&ccedil;&atilde;o com hardware, e entregou uma aplica&ccedil;&atilde;o administrativa separada para deploys menores e independentes</li>
+                        </ul>
+                        <div class="timeline-tech">
+                            <span>React.js</span><span>TypeScript</span><span>Socket.io</span><span>ZeroMQ</span><span>Node.js</span><span>PostgreSQL</span><span>MongoDB</span><span>Microservices</span><span>REST API</span><span>Scrum</span><span>Git</span><span>OOP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">
+                        May 2019 &mdash; Apr 2021
+                        <span class="duration">2 yr</span>
+                    </div>
+                    <h3 class="timeline-company">SETIC</h3>
+                    <div class="timeline-role">Senior Software Developer</div>
+                    <div class="timeline-location">Porto Velho, Rond&ocirc;nia, Brazil</div>
+                    <div class="timeline-description">
+                        <ul>
+                            <li data-lang-en>Led a team building critical government infrastructure: an HR management system and a centralized authorization layer for APIs across multiple departments</li>
+                            <li data-lang-pt>Liderou uma equipe construindo infraestrutura cr&iacute;tica do governo: um sistema de gest&atilde;o de RH e uma camada centralizada de autoriza&ccedil;&atilde;o para APIs de m&uacute;ltiplos departamentos</li>
+                            <li data-lang-en>Owned the full cycle from stakeholder requirements to architecture decisions, task breakdown, and delivery across a polyglot stack (PHP, Node.js, React, Vue.js, GraphQL)</li>
+                            <li data-lang-pt>Respons&aacute;vel pelo ciclo completo de requisitos de stakeholders a decis&otilde;es de arquitetura, quebra de tarefas e entrega em uma stack poliglota (PHP, Node.js, React, Vue.js, GraphQL)</li>
+                            <li data-lang-en>Collaborated directly with government stakeholders to identify needs, negotiate scope, and deliver solutions that served public sector operations</li>
+                            <li data-lang-pt>Colaborou diretamente com stakeholders governamentais para identificar necessidades, negociar escopo e entregar solu&ccedil;&otilde;es que atenderam opera&ccedil;&otilde;es do setor p&uacute;blico</li>
+                        </ul>
+                        <div class="timeline-tech">
+                            <span>PHP</span><span>Node.js</span><span>React.js</span><span>Vue.js</span><span>TypeScript</span><span>PostgreSQL</span><span>MongoDB</span><span>MySQL</span><span>Hasura</span><span>GraphQL</span><span>CodeIgniter</span><span>WordPress</span><span>Scrum</span><span>Git</span><span>OOP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">
+                        May 2016 &mdash; Sep 2020
+                        <span class="duration">4 yr 5 mo</span>
+                    </div>
+                    <h3 class="timeline-company">Fidelis Projetos Digitais</h3>
+                    <div class="timeline-role">
+                        <span data-lang-en>Business Owner &amp; Software Developer</span>
+                        <span data-lang-pt>Propriet&aacute;rio &amp; Desenvolvedor de Software</span>
+                    </div>
+                    <div class="timeline-location">Porto Velho, Rond&ocirc;nia, Brazil</div>
+                    <div class="timeline-description">
+                        <ul>
+                            <li data-lang-en>Founded and ran a digital projects consultancy for 4+ years, independently managing client relationships, scoping, architecture, and delivery across healthcare, education, retail, and marketing industries</li>
+                            <li data-lang-pt>Fundou e gerenciou uma consultoria de projetos digitais por mais de 4 anos, gerenciando de forma independente relacionamento com clientes, escopo, arquitetura e entrega nos setores de sa&uacute;de, educa&ccedil;&atilde;o, varejo e marketing</li>
+                            <li data-lang-en>Built a lead management platform with hot site generation for a major educational group, directly improving their campaign conversion</li>
+                            <li data-lang-pt>Construiu uma plataforma de gest&atilde;o de leads com gera&ccedil;&atilde;o de hot sites para um grande grupo educacional, melhorando diretamente a convers&atilde;o de campanhas</li>
+                            <li data-lang-en>Delivered a desktop application with Electron.js for a supermarket chain to design and print promotional materials, and a traffic quality analysis tool for a marketing agency</li>
+                            <li data-lang-pt>Entregou uma aplica&ccedil;&atilde;o desktop com Electron.js para uma rede de supermercados projetar e imprimir materiais promocionais, e uma ferramenta de an&aacute;lise de qualidade de tr&aacute;fego para uma ag&ecirc;ncia de marketing</li>
+                        </ul>
+                        <div class="timeline-tech">
+                            <span>Electron.js</span><span>WordPress</span><span>Node.js</span><span>PHP</span><span>React.js</span><span>MongoDB</span><span>MySQL</span><span>Firebase</span><span>GraphQL</span><span>CodeIgniter</span><span>Kanban</span><span>Git</span><span>OOP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-group">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-group-header">
+                        <h3 class="timeline-company">SETIC</h3>
+                        <span class="timeline-group-tenure">Oct 2012 &mdash; Oct 2016 &middot; 4 yr 1 mo</span>
+                    </div>
+                    <div class="timeline-group-roles">
+
+                        <div class="timeline-role-item">
+                            <div class="timeline-role-date">
+                                Mar 2014 &mdash; Oct 2016
+                                <span class="duration">2 yr 8 mo</span>
+                            </div>
+                            <div class="timeline-role">
+                                <span data-lang-en>Head of Web Projects</span>
+                                <span data-lang-pt>Chefe de Projetos Web</span>
+                            </div>
+                            <div class="timeline-location">Porto Velho, Rond&ocirc;nia, Brazil</div>
+                            <div class="timeline-description">
+                                <ul>
+                                    <li data-lang-en>Promoted to lead all government web projects, owning architecture decisions, requirement gathering, and team coordination across multiple concurrent initiatives</li>
+                                    <li data-lang-pt>Promovido para liderar todos os projetos web do governo, respons&aacute;vel por decis&otilde;es de arquitetura, levantamento de requisitos e coordena&ccedil;&atilde;o da equipe em m&uacute;ltiplas iniciativas simult&acirc;neas</li>
+                                    <li data-lang-en>Delivered citizen-facing systems including institutional portals, a government project transparency tracker, and web/mobile queue management for public services</li>
+                                    <li data-lang-pt>Entregou sistemas voltados ao cidad&atilde;o incluindo portais institucionais, um rastreador de transpar&ecirc;ncia de projetos governamentais e gest&atilde;o de filas web/mobile para servi&ccedil;os p&uacute;blicos</li>
+                                    <li data-lang-en>Built an end-to-end science fair management platform covering registration, evaluation, and winner selection</li>
+                                    <li data-lang-pt>Construiu uma plataforma completa de gest&atilde;o de feira de ci&ecirc;ncias cobrindo inscri&ccedil;&atilde;o, avalia&ccedil;&atilde;o e sele&ccedil;&atilde;o de vencedores</li>
+                                </ul>
+                                <div class="timeline-tech">
+                                    <span>PHP</span><span>CodeIgniter</span><span>Node.js</span><span>Express.js</span><span>React</span><span>AngularJS</span><span>MongoDB</span><span>PostgreSQL</span><span>MySQL</span><span>Redis</span><span>Firebase</span><span>WordPress</span><span>Kanban</span><span>Git</span><span>OOP</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-role-item">
+                            <div class="timeline-role-date">
+                                Oct 2012 &mdash; Feb 2014
+                                <span class="duration">1 yr 5 mo</span>
+                            </div>
+                            <div class="timeline-role">Software Developer</div>
+                            <div class="timeline-location">Porto Velho, Rond&ocirc;nia, Brazil</div>
+                            <div class="timeline-description">
+                                <ul>
+                                    <li data-lang-en>Designed and delivered WordPress websites, institutional portals, and web applications for government operations</li>
+                                    <li data-lang-pt>Projetou e entregou sites WordPress, portais institucionais e aplica&ccedil;&otilde;es web para opera&ccedil;&otilde;es governamentais</li>
+                                    <li data-lang-en>Early career role where I took on architecture and client-facing responsibilities that led to my promotion to Head of Web Projects</li>
+                                    <li data-lang-pt>In&iacute;cio de carreira onde assumi responsabilidades de arquitetura e contato com clientes que levaram &agrave; minha promo&ccedil;&atilde;o para Chefe de Projetos Web</li>
+                                </ul>
+                                <div class="timeline-tech">
+                                    <span>PHP</span><span>WordPress</span><span>HTML</span><span>Kanban</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">
+                        Nov 2011 &mdash; Sep 2012
+                        <span class="duration">11 mo</span>
+                    </div>
+                    <h3 class="timeline-company">Netpix &mdash; Ag&ecirc;ncia Web</h3>
+                    <div class="timeline-role">
+                        <span data-lang-en>Head of Production</span>
+                        <span data-lang-pt>Chefe de Produ&ccedil;&atilde;o</span>
+                    </div>
+                    <div class="timeline-location">Porto Velho, Rond&ocirc;nia, Brazil</div>
+                    <div class="timeline-description">
+                        <ul>
+                            <li data-lang-en>First leadership role: managed a team delivering WordPress websites and plugins for agency clients</li>
+                            <li data-lang-pt>Primeira fun&ccedil;&atilde;o de lideran&ccedil;a: gerenciou uma equipe entregando sites e plugins WordPress para clientes da ag&ecirc;ncia</li>
+                            <li data-lang-en>Owned website performance optimization and mentored team members on development best practices</li>
+                            <li data-lang-pt>Respons&aacute;vel pela otimiza&ccedil;&atilde;o de performance de sites e mentorou membros da equipe em boas pr&aacute;ticas de desenvolvimento</li>
+                        </ul>
+                        <div class="timeline-tech">
+                            <span>PHP</span><span>MySQL</span><span>WordPress</span><span>Kanban</span><span>OOP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">
+                        Jun 2007 &mdash; Apr 2016
+                        <span class="duration">8 yr 11 mo</span>
+                    </div>
+                    <h3 class="timeline-company">Freelance</h3>
+                    <div class="timeline-role">Software Developer</div>
+                    <div class="timeline-location">Porto Velho, Rond&ocirc;nia, Brazil</div>
+                    <div class="timeline-description">
+                        <ul>
+                            <li data-lang-en>Self-taught developer who started building websites and web applications for local businesses at age 17, laying the foundation for a 17+ year career in software</li>
+                            <li data-lang-pt>Desenvolvedor autodidata que come&ccedil;ou a construir sites e aplica&ccedil;&otilde;es web para neg&oacute;cios locais aos 17 anos, lan&ccedil;ando a base para uma carreira de mais de 17 anos em software</li>
+                        </ul>
+                        <div class="timeline-tech">
+                            <span>PHP</span><span>WordPress</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>jQuery</span><span>MySQL</span><span>Adobe Photoshop</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact" id="contact">
+            <div class="section-header reveal">
+                <span class="section-number">05</span>
+                <h2 class="section-title">
+                    <span data-lang-en>Let's Work Together</span>
+                    <span data-lang-pt>Vamos Trabalhar Juntos</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-text reveal">
+                    <p data-lang-en>Have a project that needs solid architecture? Looking for consulting on your technical strategy? I'm available for freelance work, consulting engagements, and architecture reviews. Let's talk about how I can help your team build better software.</p>
+                    <p data-lang-pt>Tem um projeto que precisa de uma arquitetura s&oacute;lida? Procurando consultoria para sua estrat&eacute;gia t&eacute;cnica? Estou dispon&iacute;vel para trabalho freelance, consultorias e revis&otilde;es de arquitetura. Vamos conversar sobre como posso ajudar sua equipe a construir software melhor.</p>
+                </div>
+                <div class="contact-links reveal">
+                    <a class="contact-link" href="mailto:rubens@fidelis.dev">
+                        <div>
+                            <div class="contact-link-label">Email</div>
+                            <div class="contact-link-value">rubens@fidelis.dev</div>
+                        </div>
+                        <div class="contact-link-icon">&rarr;</div>
+                    </a>
+                    <a class="contact-link" href="https://www.linkedin.com/in/rubens-fidelis/" target="_blank" rel="noopener">
+                        <div>
+                            <div class="contact-link-label">LinkedIn</div>
+                            <div class="contact-link-value">linkedin.com/in/rubens-fidelis</div>
+                        </div>
+                        <div class="contact-link-icon">&rarr;</div>
+                    </a>
+                    <a class="contact-link" href="tel:+5544991713921">
+                        <div>
+                            <div class="contact-link-label">
+                                <span data-lang-en>Phone</span>
+                                <span data-lang-pt>Telefone</span>
+                            </div>
+                            <div class="contact-link-value">+55 44 991 713 921</div>
+                        </div>
+                        <div class="contact-link-icon">&rarr;</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p class="footer-text">
+            <span data-lang-en>Designed &amp; built by Rubens Fidelis &mdash; 2026</span>
+            <span data-lang-pt>Projetado &amp; constru&iacute;do por Rubens Fidelis &mdash; 2026</span>
+        </p>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
