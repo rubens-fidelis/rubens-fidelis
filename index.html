@@ -25,12 +25,28 @@
                 <li><a href="#experience"><span data-lang-en>Experience</span><span data-lang-pt>Experi&ecirc;ncia</span></a></li>
                 <li><a href="#contact"><span data-lang-en>Contact</span><span data-lang-pt>Contato</span></a></li>
             </ul>
+            <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
             <div class="lang-toggle">
                 <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
                 <button class="lang-btn" data-lang="pt-BR" onclick="setLang('pt-BR')">PT</button>
             </div>
         </div>
     </nav>
+
+    <div class="nav-overlay" aria-hidden="true">
+        <button class="nav-overlay-close" aria-label="Close menu">&#10005;</button>
+        <ul class="nav-overlay-links">
+            <li><a href="#services"><span data-lang-en>Services</span><span data-lang-pt>Servi&ccedil;os</span></a></li>
+            <li><a href="#about"><span data-lang-en>About</span><span data-lang-pt>Sobre</span></a></li>
+            <li><a href="#skills"><span data-lang-en>Skills</span><span data-lang-pt>Habilidades</span></a></li>
+            <li><a href="#experience"><span data-lang-en>Experience</span><span data-lang-pt>Experi&ecirc;ncia</span></a></li>
+            <li><a href="#contact"><span data-lang-en>Contact</span><span data-lang-pt>Contato</span></a></li>
+        </ul>
+        <div class="lang-toggle overlay-lang-toggle">
+            <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" data-lang="pt-BR" onclick="setLang('pt-BR')">PT</button>
+        </div>
+    </div>
 
     <main>
 
