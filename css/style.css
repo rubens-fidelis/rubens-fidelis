@@ -891,6 +891,32 @@ footer {
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
+/* ——— Tablet 768px+ ——— */
+@media (min-width: 768px) {
+    section { padding: 0 32px; }
+    nav { padding: 0 32px; height: 60px; }
+    .hero { padding-top: 60px; }
+    .hero-cta { flex-direction: row; }
+    .hero-cta a { text-align: left; }
+    .hero-meta { gap: 32px; }
+    .about, .skills, .experience, .contact, .services { padding-top: 100px; padding-bottom: 100px; }
+    .section-header { margin-bottom: 52px; }
+    .about-content { gap: 48px; }
+    .about-stats { gap: 20px; }
+    .stat-card { padding: 24px; }
+    .stat-number { font-size: 36px; }
+    .contact-content { gap: 48px; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .timeline { padding-left: 48px; }
+    .timeline::before { left: 16px; }
+    .timeline-dot { left: -37px; width: 10px; height: 10px; }
+    .timeline-item { padding-bottom: 52px; }
+    .timeline-group { padding-bottom: 52px; }
+    .timeline-group-roles { padding-left: 24px; }
+    .timeline-role-item::before { left: -28px; }
+}
+
 /* ——— Desktop 1024px+ ——— */
 @media (min-width: 1024px) {
     section { padding: 0 40px; }
