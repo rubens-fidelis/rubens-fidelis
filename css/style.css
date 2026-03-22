@@ -102,6 +102,17 @@ body {
 
 @keyframes bgFadeIn { to { opacity: 1; } }
 
+/* ——— Frosted Glass Overlay ——— */
+#bg-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background: var(--content-bg);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    pointer-events: none;
+}
+
 /* ——— Coordinate Markers ——— */
 .coord-marker {
     position: fixed;
@@ -232,7 +243,6 @@ nav.scrolled {
 main {
     position: relative;
     z-index: 2;
-    background: var(--content-bg);
 }
 section { padding: 0 16px; }
 
@@ -889,7 +899,6 @@ footer {
     padding: 40px;
     border-top: 1px solid var(--border-subtle);
     text-align: center;
-    background: var(--content-bg);
 }
 
 .footer-text {
