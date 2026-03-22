@@ -233,8 +233,6 @@ main {
     position: relative;
     z-index: 2;
     background: var(--content-bg);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
 }
 section { padding: 0 16px; }
 
@@ -532,6 +530,7 @@ section { padding: 0 16px; }
 
 .about-industries {
     grid-column: 1 / -1;
+    margin-top: 0;
 }
 
 .stat-card {
@@ -891,8 +890,6 @@ footer {
     border-top: 1px solid var(--border-subtle);
     text-align: center;
     background: var(--content-bg);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
 }
 
 .footer-text {
