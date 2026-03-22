@@ -26,6 +26,7 @@
     --nav-bg: rgba(10, 11, 13, 0.8);
     --nav-bg-scrolled: rgba(10, 11, 13, 0.95);
     --overlay-bg: rgba(10, 11, 13, 0.97);
+    --content-bg: rgba(10, 11, 13, 0.42);
 }
 
 /* ——— Light Theme ——— */
@@ -46,6 +47,7 @@
         --nav-bg: rgba(245, 246, 248, 0.8);
         --nav-bg-scrolled: rgba(245, 246, 248, 0.95);
         --overlay-bg: rgba(245, 246, 248, 0.97);
+        --content-bg: rgba(245, 246, 248, 0.48);
     }
 }
 
@@ -65,6 +67,7 @@
     --nav-bg: rgba(245, 246, 248, 0.8);
     --nav-bg-scrolled: rgba(245, 246, 248, 0.95);
     --overlay-bg: rgba(245, 246, 248, 0.97);
+    --content-bg: rgba(245, 246, 248, 0.48);
 }
 
 html {
@@ -226,7 +229,13 @@ nav.scrolled {
 .nav-links a:hover::after { width: 100%; }
 
 /* ——— Main Content ——— */
-main { position: relative; z-index: 2; }
+main {
+    position: relative;
+    z-index: 2;
+    background: var(--content-bg);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
 section { padding: 0 16px; }
 
 /* ——— Hero Section ——— */
