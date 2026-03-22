@@ -179,8 +179,8 @@ nav.scrolled {
 .nav-logo {
     font-family: var(--font-mono);
     font-size: 13px;
-    font-weight: 400;
-    color: var(--accent);
+    font-weight: 900;
+    color: white;
     letter-spacing: 0.05em;
     text-decoration: none;
 }
