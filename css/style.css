@@ -87,23 +87,17 @@ body {
     color: var(--bg-deep);
 }
 
-/* ——— Blueprint Grid Background ——— */
-.blueprint-grid {
+/* ——— Animated Diagram Background ——— */
+#bg-canvas {
     position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: 0;
-    background-image:
-        linear-gradient(var(--grid-color) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
-        linear-gradient(var(--grid-color-strong) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-color-strong) 1px, transparent 1px);
-    background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
     opacity: 0;
-    animation: gridFadeIn 2s ease-out 0.5s forwards;
+    animation: bgFadeIn 2s ease-out 0.5s forwards;
 }
 
-@keyframes gridFadeIn { to { opacity: 1; } }
+@keyframes bgFadeIn { to { opacity: 1; } }
 
 /* ——— Coordinate Markers ——— */
 .coord-marker {
