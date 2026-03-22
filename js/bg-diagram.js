@@ -30,20 +30,20 @@ const LAYERS = [
   // Far — most transparent, slowest, dashed edges
   {
     count: 40, wRange: [18, 30], hRange: [10, 16],
-    alpha: 0.25, mouseSpeed: 0.006, scrollSpeed: 0.05,
-    fontSize: 0,   knn: 2, edgeAlpha: 0.65, dash: [3, 6],
+    alpha: 0.45, mouseSpeed: 0.006, scrollSpeed: 0.05,
+    fontSize: 0,   knn: 2, edgeAlpha: 0.75, dash: [3, 6],
   },
   // Mid
   {
     count: 25, wRange: [26, 44], hRange: [13, 21],
-    alpha: 0.30, mouseSpeed: 0.017, scrollSpeed: 0.13,
-    fontSize: 0,   knn: 3, edgeAlpha: 0.70, dash: [3, 4],
+    alpha: 0.50, mouseSpeed: 0.017, scrollSpeed: 0.13,
+    fontSize: 0,   knn: 3, edgeAlpha: 0.80, dash: [3, 4],
   },
   // Near — solid edges, micro-labels
   {
     count: 15,  wRange: [36, 56], hRange: [16, 26],
-    alpha: 0.35, mouseSpeed: 0.034, scrollSpeed: 0.25,
-    fontSize: 5.5, knn: 3, edgeAlpha: 0.75, dash: [],
+    alpha: 0.55, mouseSpeed: 0.034, scrollSpeed: 0.25,
+    fontSize: 5.5, knn: 3, edgeAlpha: 0.85, dash: [],
   },
 ];
 
