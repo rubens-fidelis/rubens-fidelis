@@ -530,6 +530,10 @@ section { padding: 0 16px; }
     gap: 16px;
 }
 
+.about-industries {
+    grid-column: 1 / -1;
+}
+
 .stat-card {
     padding: 20px;
     border: 1px solid var(--border-subtle);
