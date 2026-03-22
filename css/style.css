@@ -238,13 +238,20 @@ section { padding: 0 16px; }
 /* ——— Hero Section ——— */
 .hero {
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     padding-top: 52px;
     max-width: 1200px;
     margin: 0 auto;
-    position: relative;
+}
+
+.hero-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 24px;
 }
 
 .hero-label {
@@ -368,14 +375,13 @@ section { padding: 0 16px; }
 }
 
 .hero-scroll-indicator {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
+    padding-top: 24px;
+    padding-bottom: 40px;
+    align-self: center;
     opacity: 0;
     animation: fadeIn 1s ease-out 1.5s forwards;
 }
@@ -1002,6 +1008,29 @@ footer {
     .nav-overlay.open .nav-overlay-links li { opacity: 1; transform: none; }
     .nav-overlay .lang-toggle { transition: none; }
     .nav-overlay.open .lang-toggle { opacity: 1; transform: none; }
+}
+
+/* ——— Short viewports (landscape phones, Nest Hub, etc.) ——— */
+@media (max-height: 680px) {
+    .hero-label { margin-bottom: 10px; }
+    .hero-name { margin-bottom: 10px; font-size: clamp(40px, 7vw, 80px); }
+    .hero-title { margin-bottom: 16px; }
+    .hero-cta { margin-bottom: 16px; }
+    .hero-scroll-indicator { display: none; }
+}
+
+/* ——— Mobile only (max 767px) ——— */
+@media (max-width: 767px) {
+    .hero { padding-top: 64px; }
+    .hero-label { margin-bottom: 16px; }
+    .hero-name { margin-bottom: 16px; }
+    .hero-title { margin-bottom: 28px; }
+    .hero-cta { margin-bottom: 28px; }
+    .hero-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+}
+
+@media (max-width: 480px) and (max-height: 700px) {
+    .hero-meta { display: none; }
 }
 
 /* ——— Tablet 768px+ ——— */
