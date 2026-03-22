@@ -886,6 +886,9 @@ footer {
     padding: 40px;
     border-top: 1px solid var(--border-subtle);
     text-align: center;
+    background: var(--content-bg);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
 }
 
 .footer-text {
