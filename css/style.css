@@ -194,7 +194,7 @@ nav.scrolled {
     font-family: var(--font-mono);
     font-size: 13px;
     font-weight: 900;
-    color: white;
+    color: var(--text-primary);
     letter-spacing: 0.05em;
     text-decoration: none;
 }
