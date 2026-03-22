@@ -931,7 +931,7 @@ footer {
 
 .nav-overlay.open {
     opacity: 1;
-    pointer-events: all;
+    pointer-events: auto;
 }
 
 .nav-overlay-close {
