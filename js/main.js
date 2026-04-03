@@ -83,6 +83,7 @@ if (hamburger && navOverlay && overlayClose) {
         isNavOpen = true;
         navOverlay.classList.add('open');
         navOverlay.setAttribute('aria-hidden', 'false');
+        navOverlay.removeAttribute('inert');
         hamburger.setAttribute('aria-expanded', 'true');
         mainNavLangBtns.forEach(btn => btn.setAttribute('tabindex', '-1'));
         overlayClose.focus();
@@ -101,6 +102,7 @@ if (hamburger && navOverlay && overlayClose) {
         isNavOpen = false;
         navOverlay.classList.remove('open');
         navOverlay.setAttribute('aria-hidden', 'true');
+        navOverlay.setAttribute('inert', '');
         hamburger.setAttribute('aria-expanded', 'false');
         mainNavLangBtns.forEach(btn => btn.removeAttribute('tabindex'));
         if (hamburger.offsetParent !== null) hamburger.focus();
