@@ -90,47 +90,6 @@ body {
     color: var(--bg-deep);
 }
 
-/* ——— Scanlines Background ——— */
-body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0, 0, 0, 0.82) 2px,
-        rgba(0, 0, 0, 0.82) 4px
-    );
-}
-
-body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background: radial-gradient(ellipse at 50% 45%, transparent 35%, rgba(0, 0, 0, 0.55) 100%);
-}
-
-@media (prefers-color-scheme: light) {
-    :root:not([data-theme="dark"]) body::before { background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.06) 2px, rgba(0, 0, 0, 0.06) 4px); }
-    :root:not([data-theme="dark"]) body::after  { background: radial-gradient(ellipse at 50% 45%, transparent 40%, rgba(0, 0, 0, 0.08) 100%); }
-}
-
-[data-theme="light"] body::before { background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.06) 2px, rgba(0, 0, 0, 0.06) 4px); }
-[data-theme="light"] body::after  { background: radial-gradient(ellipse at 50% 45%, transparent 40%, rgba(0, 0, 0, 0.08) 100%); }
-
-/* ——— Content Overlay ——— */
-#bg-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    background: var(--content-bg);
-    pointer-events: none;
-}
 
 /* ——— Coordinate Markers ——— */
 .coord-marker {
