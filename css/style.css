@@ -108,8 +108,6 @@ body {
     inset: 0;
     z-index: 1;
     background: var(--content-bg);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
     pointer-events: none;
 }
 

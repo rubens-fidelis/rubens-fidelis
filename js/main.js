@@ -41,8 +41,10 @@ revealElements.forEach(el => revealObserver.observe(el));
 
 // ——— Nav scroll effect ———
 const nav = document.querySelector('nav');
+let navScrolled = false;
 window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
+    const should = window.scrollY > 60;
+    if (should !== navScrolled) { navScrolled = should; nav.classList.toggle('scrolled', should); }
 }, { passive: true });
 
 // ——— Smooth scroll for nav links ———
@@ -58,10 +60,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // ——— Hide scroll indicator on scroll ———
 const scrollIndicator = document.querySelector('.hero-scroll-indicator');
+let scrollIndicatorHidden = false;
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
+    if (!scrollIndicatorHidden && window.scrollY > 100) {
+        scrollIndicatorHidden = true;
         scrollIndicator.style.opacity = '0';
-        scrollIndicator.style.transition = 'opacity 0.5s ease';
     }
 }, { passive: true });
 

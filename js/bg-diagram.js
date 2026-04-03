@@ -247,16 +247,29 @@ function draw() {
     });
   });
 
-  requestAnimationFrame(draw);
+  rafId = isVisible ? requestAnimationFrame(draw) : null;
 }
 
 // ─── Initialise ───────────────────────────────────────────────────────────────
 
+let rafId = null;
+let isVisible = !document.hidden;
+
+document.addEventListener('visibilitychange', () => {
+  isVisible = !document.hidden;
+  if (isVisible && rafId === null) rafId = requestAnimationFrame(draw);
+});
+
 resizeCanvas();
 rebuildLayers();
-draw();
+rafId = requestAnimationFrame(draw);
 
-window.addEventListener('resize',    () => { resizeCanvas(); rebuildLayers(); });
+let resizeTimer;
+window.addEventListener('resize', () => {
+  resizeCanvas();
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(rebuildLayers, 250);
+});
 window.addEventListener('mousemove', onMouseMove);
 window.addEventListener('touchmove', onTouchMove, { passive: true });
 window.addEventListener('scroll',    onScroll,    { passive: true });
