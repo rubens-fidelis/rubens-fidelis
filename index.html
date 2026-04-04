@@ -32,13 +32,18 @@
     <link rel="preload" href="/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLETP6PMDJ"></script>
+    <!-- Google Analytics 4 — deferred until after load to remove from LCP path -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-CLETP6PMDJ');
+        window.addEventListener('load', function() {
+            var s = document.createElement('script');
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-CLETP6PMDJ';
+            s.async = true;
+            document.head.appendChild(s);
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-CLETP6PMDJ');
+        });
     </script>
 </head>
 <body>
