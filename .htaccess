@@ -5,6 +5,7 @@ Options -MultiViews
 AddType text/html .html
 AddType text/css .css
 AddType application/javascript .js
+AddType font/woff2 .woff2
 AddDefaultCharset UTF-8
 
 # Allow AI crawlers and bots with permissive response headers
