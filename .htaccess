@@ -1,0 +1,15 @@
+# Disable content negotiation — prevents 415 errors from bots with non-browser Accept headers
+Options -MultiViews
+
+# Explicit MIME types — prevents PHP handler from hijacking .html files on cPanel
+AddType text/html .html
+AddType text/css .css
+AddType application/javascript .js
+AddDefaultCharset UTF-8
+
+# Allow AI crawlers and bots with permissive response headers
+<IfModule mod_headers.c>
+    Header set X-Robots-Tag "index, follow"
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, HEAD, OPTIONS"
+</IfModule>
