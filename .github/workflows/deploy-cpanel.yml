@@ -29,5 +29,8 @@ jobs:
             **/.git*/**
             **/.claude/**
             **/docs/**
+            **/.superpowers/**
+            **/tmp/**
             **/README.md
+            **/wrangler.jsonc
             **/.DS_Store
