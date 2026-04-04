@@ -1,3 +1,6 @@
 User-agent: *
 Allow: /
 Sitemap: https://fidelis.dev/sitemap.xml
+
+# AI crawler content manifest
+llms.txt: https://fidelis.dev/llms.txt
