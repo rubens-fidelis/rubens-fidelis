@@ -1,0 +1,21 @@
+# Rubens Fidelis — Software Architect & Consultant
+> Professional portfolio for Rubens Fidelis, a Software Architect with 17+ years of experience in systems design, clean architecture, and technical leadership. Available for consulting, freelance, and technical leadership engagements.
+
+## About
+Rubens Fidelis is a Software Architect based in Paraná, Brazil. He specializes in building scalable, maintainable software systems across backend, frontend, and cloud infrastructure. Currently works at Venturus.
+
+## Services
+- Software Architecture: System design, microservices, event-driven architecture, DDD
+- Technical Consulting: Architecture reviews, tech stack decisions, roadmap planning
+- Team & Process Optimization: Engineering culture, mentoring, agile practices, documentation
+
+## Expertise
+Node.js, TypeScript, React, PostgreSQL, MongoDB, Redis, Docker, AWS, Clean Architecture, SOLID, Domain-Driven Design, Microservices, REST APIs, GraphQL, Technical Leadership
+
+## Contact
+- Email: rubens@fidelis.dev
+- LinkedIn: https://www.linkedin.com/in/rubens-fidelis/
+- Website: https://fidelis.dev
+
+## Languages
+This site is available in English (en) and Brazilian Portuguese (pt-BR).
