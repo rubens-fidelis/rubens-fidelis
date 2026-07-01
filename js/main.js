@@ -12,6 +12,7 @@ function setLang(lang, save) {
     document.querySelectorAll('.lang-btn').forEach(function(btn) {
         btn.classList.toggle('active', btn.dataset.lang === lang);
     });
+    refreshTenures();
     if (save !== false) localStorage.setItem('rf-lang', lang);
 }
 
@@ -23,6 +24,31 @@ function setLang(lang, save) {
     // First visit: auto-detect but don't save, so toggle still works freely
     setLang(browserLang.startsWith('pt') ? 'pt-BR' : 'en', false);
 })();
+
+// ——— Dynamic tenure for the current role ———
+// Spans marked [data-tenure-start="YYYY-MM"] render a live duration from that
+// month to now, so the current job never shows a stale "3 yr 10 mo" value.
+// Formatting mirrors the existing hand-written badges ("3 yr 10 mo" / "3 a 10 m").
+function formatTenure(years, months, lang) {
+    const yr = lang === 'pt' ? 'a' : 'yr';
+    const mo = lang === 'pt' ? 'm' : 'mo';
+    if (years > 0 && months > 0) return years + ' ' + yr + ' ' + months + ' ' + mo;
+    if (years > 0) return years + ' ' + yr;
+    return months + ' ' + mo;
+}
+
+function refreshTenures() {
+    const now = new Date();
+    document.querySelectorAll('[data-tenure-start]').forEach(function(el) {
+        var parts = el.dataset.tenureStart.split('-').map(Number);
+        if (parts.length !== 2 || parts.some(isNaN)) return;
+        var years = now.getFullYear() - parts[0];
+        var months = now.getMonth() - (parts[1] - 1);
+        if (months < 0) { years--; months += 12; }
+        var lang = el.closest('[data-lang-pt]') ? 'pt' : 'en';
+        el.textContent = formatTenure(years, months, lang);
+    });
+}
 
 // ——— Scroll Reveal ———
 const revealElements = document.querySelectorAll('.reveal, .timeline-item, .timeline-group');

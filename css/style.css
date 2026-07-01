@@ -735,7 +735,8 @@ section { padding: 0 16px; }
     gap: 12px;
 }
 
-.timeline-date .duration {
+.timeline-date .duration,
+.timeline-role-date .duration {
     padding: 2px 8px;
     background: var(--accent-dim);
     color: var(--accent);
