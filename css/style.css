@@ -20,9 +20,13 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    --accent: #5b9bd5;
-    --accent-dim: rgba(91, 155, 213, 0.15);
-    --accent-glow: rgba(91, 155, 213, 0.08);
+    --accent: #00ff66;
+    --accent-dim: rgba(0, 255, 102, 0.15);
+    --accent-glow: rgba(0, 255, 102, 0.08);
+    /* Animated lime→neon gradient — applied only where gradients render
+       (hero name, primary button, card accent bars). Drifts via @keyframes gradShift. */
+    --grad: linear-gradient(110deg, #d4ff4f, #a3ff5e 25%, #00ff66 50%, #a3ff5e 75%, #d4ff4f);
+    --grad-size: 200% auto;
     --font-serif: 'JetBrains Mono', monospace;
     --font-sans: 'JetBrains Mono', monospace;
     --font-mono: 'JetBrains Mono', monospace;
@@ -102,6 +106,29 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+}
+
+/* Ambient breathing glow — fixed behind content (z-index 0), never above text/cards */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(120% 80% at 50% -10%, var(--accent-glow), transparent 60%);
+    animation: glowBreath 8s ease-in-out infinite;
+}
+
+@keyframes glowBreath {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+/* Drift for the accent gradient on hero name, button, and card accent bars */
+@keyframes gradShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 ::selection {
@@ -289,7 +316,12 @@ section { padding: 0 16px; }
 
 .hero-name em {
     font-style: normal;
-    color: var(--accent);
+    background-image: var(--grad);
+    background-size: var(--grad-size);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradShift 6s ease-in-out infinite;
 }
 
 .hero-title {
@@ -324,10 +356,13 @@ section { padding: 0 16px; }
     letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 14px 32px;
-    background: var(--accent);
+    background-image: var(--grad);
+    background-size: var(--grad-size);
+    background-repeat: no-repeat;
     color: var(--bg-deep);
     text-decoration: none;
     border: 1px solid var(--accent);
+    animation: gradShift 6s ease-in-out infinite;
     transition: all 0.3s ease;
     font-weight: 900;
 }
@@ -470,7 +505,9 @@ section { padding: 0 16px; }
     left: 0;
     right: 0;
     height: 2px;
-    background: var(--accent);
+    background-image: var(--grad);
+    background-size: var(--grad-size);
+    animation: gradShift 6s ease-in-out infinite;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.6s ease;
@@ -599,7 +636,9 @@ section { padding: 0 16px; }
     left: 0;
     width: 3px;
     height: 0;
-    background: var(--accent);
+    background-image: var(--grad);
+    background-size: var(--grad-size);
+    animation: gradShift 6s ease-in-out infinite;
     transition: height 0.6s ease;
 }
 
@@ -1021,6 +1060,12 @@ footer {
     .nav-overlay.open .nav-overlay-links li { opacity: 1; transform: none; }
     .nav-overlay .lang-toggle { transition: none; }
     .nav-overlay.open .lang-toggle { opacity: 1; transform: none; }
+    /* Freeze the accent gradient drift and background glow */
+    .hero-name em,
+    .btn-primary,
+    .service-card::before,
+    .skill-group::before,
+    body::before { animation: none; }
 }
 
 /* ——— Short viewports (landscape phones, Nest Hub, etc.) ——— */
