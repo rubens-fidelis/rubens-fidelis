@@ -13,6 +13,7 @@ function setLang(lang, save) {
         btn.classList.toggle('active', btn.dataset.lang === lang);
     });
     refreshTenures();
+    refreshCareerYears();
     if (save !== false) localStorage.setItem('rf-lang', lang);
 }
 
@@ -47,6 +48,21 @@ function refreshTenures() {
         if (months < 0) { years--; months += 12; }
         var lang = el.closest('[data-lang-pt]') ? 'pt' : 'en';
         el.textContent = formatTenure(years, months, lang);
+    });
+}
+
+// ——— Dynamic total career years ———
+// Elements marked [data-career-years="YYYY-MM"] render floor(now − start).
+// The stat card and EN copy show "N+"; PT copy wraps the number in
+// "mais de … anos", so inside a [data-lang-pt] ancestor the "+" is dropped.
+function refreshCareerYears() {
+    var now = new Date();
+    document.querySelectorAll('[data-career-years]').forEach(function(el) {
+        var parts = el.dataset.careerYears.split('-').map(Number);
+        if (parts.length !== 2 || parts.some(isNaN)) return;
+        var years = now.getFullYear() - parts[0];
+        if (now.getMonth() < parts[1] - 1) years--; // start month not yet reached
+        el.textContent = el.closest('[data-lang-pt]') ? String(years) : years + '+';
     });
 }
 
