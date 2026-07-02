@@ -178,9 +178,14 @@ nav.scrolled {
     font-family: var(--font-mono);
     font-size: 13px;
     font-weight: 900;
-    color: var(--text-primary);
     letter-spacing: 0.05em;
     text-decoration: none;
+    background-image: var(--grad);
+    background-size: var(--grad-size);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradShift 6s ease-in-out infinite;
 }
 
 .nav-right {
@@ -1027,6 +1032,7 @@ footer {
     .btn-primary,
     .service-card::before,
     .skill-group::before,
+    .nav-logo,
     body::before { animation: none; }
 }
 
