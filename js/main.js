@@ -47,6 +47,12 @@ function refreshTenures() {
         var months = now.getMonth() - (parts[1] - 1);
         if (months < 0) { years--; months += 12; }
         var lang = el.closest('[data-lang-pt]') ? 'pt' : 'en';
+        // Brand-new role in its first month: keep the "Current" label
+        // instead of rendering an awkward "0 mo".
+        if (years === 0 && months === 0) {
+            el.textContent = lang === 'pt' ? 'Atual' : 'Current';
+            return;
+        }
         el.textContent = formatTenure(years, months, lang);
     });
 }
