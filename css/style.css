@@ -68,20 +68,15 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Ambient breathing glow — fixed behind content (z-index 0), never above text/cards */
-body::before {
-    content: '';
+/* Ambient wave background — fixed canvas dot-field (subtle intensity, 2× tempo).
+   Engine lives in js/main.js. Sits below main (z-index 2) and nav (z-index 100);
+   scroll dimming (js) fades it toward 25% opacity as content sections take over. */
+#bg {
     position: fixed;
     inset: 0;
+    z-index: 1;
     pointer-events: none;
-    z-index: 0;
-    background: radial-gradient(120% 80% at 50% -10%, var(--accent-glow), transparent 60%);
-    animation: glowBreath 8s ease-in-out infinite;
-}
-
-@keyframes glowBreath {
-    0%, 100% { opacity: 0.7; }
-    50% { opacity: 1; }
+    transition: opacity 0.15s linear;
 }
 
 /* Drift for the accent gradient on hero name, button, and card accent bars */
@@ -237,6 +232,7 @@ section { padding: 0 16px; }
 
 /* ——— Hero Section ——— */
 .hero {
+    position: relative;
     min-height: 100vh;
     min-height: 100svh;
     display: flex;
@@ -244,6 +240,18 @@ section { padding: 0 16px; }
     padding-top: 52px;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+/* Soft scrim behind the hero text column — keeps copy legible over the wave texture */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: -4% -8%;
+    background: radial-gradient(ellipse 60% 58% at 30% 40%,
+        rgba(10, 11, 13, 0.74),
+        rgba(10, 11, 13, 0.44) 58%,
+        transparent 80%);
+    pointer-events: none;
 }
 
 .hero-body {
@@ -1027,13 +1035,12 @@ footer {
     .nav-overlay.open .nav-overlay-links li { opacity: 1; transform: none; }
     .nav-overlay .lang-toggle { transition: none; }
     .nav-overlay.open .lang-toggle { opacity: 1; transform: none; }
-    /* Freeze the accent gradient drift and background glow */
+    /* Freeze the accent gradient drift (wave canvas handles its own reduced-motion) */
     .hero-name em,
     .btn-primary,
     .service-card::before,
     .skill-group::before,
-    .nav-logo,
-    body::before { animation: none; }
+    .nav-logo { animation: none; }
 }
 
 /* ——— Short viewports (landscape phones, Nest Hub, etc.) ——— */

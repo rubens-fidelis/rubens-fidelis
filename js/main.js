@@ -190,3 +190,112 @@ if (hamburger && navOverlay && overlayClose) {
         if (e.matches) closeNav();
     });
 }
+
+// ——— Ambient wave background ———
+// Fixed dot-field behind all content: subtle intensity, 2× tempo. Dims toward
+// 25% opacity on scroll so body text stays crisp, pauses when the tab hides,
+// and renders one static frame under prefers-reduced-motion.
+(function() {
+    const canvas = document.getElementById('bg');
+    if (!canvas || !canvas.getContext) return;
+    const ctx = canvas.getContext('2d');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Wave tuning (matches the approved preview: Wave I · subtle, 2× speed)
+    const SPEED = 2;
+    const SPACING = 9, BASE_A = 0.02, MAX_A = 0.30, GAMMA = 2.4, MIX_K = 0.85, DISP = 5, DOT = 1.6;
+    const GREEN = [0, 255, 102], MINT = [234, 255, 242];
+
+    let W = 0, H = 0, grid = [];
+    let rafId = 0, running = false, t = 0, last = 0;
+    // Start off-screen so the cursor swell is inactive until a real mousemove
+    const mouse = { x: -1, y: -1, sx: -1, sy: -1 };
+
+    const rand = (lo, hi) => lo + Math.random() * (hi - lo);
+
+    function resize() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+        W = window.innerWidth;
+        H = window.innerHeight;
+        canvas.width = W * dpr;
+        canvas.height = H * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        grid = [];
+        for (let y = 0; y <= H + SPACING; y += SPACING)
+            for (let x = 0; x <= W + SPACING; x += SPACING)
+                grid.push({ x, y, ph: rand(0, 6.28) });
+        if (reducedMotion) draw(0);
+    }
+
+    function elevation(x, y, st, mx, my) {
+        let z =
+            Math.sin(x * 0.006 + st * 0.55) * Math.cos(y * 0.007 - st * 0.38) +
+            0.55 * Math.sin((x + y) * 0.0035 + st * 0.7) +
+            0.35 * Math.sin(x * 0.013 - st * 0.9 + y * 0.004);
+        const dx = x - mx, dy = y - my, d2 = dx * dx + dy * dy;
+        if (d2 < 25600) z += (1 - Math.sqrt(d2) / 160) * 0.9;   // cursor swell (160px radius)
+        return z / 1.9;
+    }
+
+    function draw(tt) {
+        ctx.clearRect(0, 0, W, H);
+        const mx = mouse.sx * W, my = mouse.sy * H;
+        const yOff = (mouse.sy - 0.5) * -10;
+        const st = tt * SPEED;
+        for (let i = 0; i < grid.length; i++) {
+            const g = grid[i];
+            const z = elevation(g.x, g.y, st + g.ph * 0.15, mx, my + yOff);
+            const m = (z + 1) / 2;                              // 0..1 coverage everywhere
+            const a = BASE_A + MAX_A * Math.pow(m, GAMMA);
+            if (a < 0.03) continue;
+            const k = Math.min(m * MIX_K, 1);
+            const r = (GREEN[0] + (MINT[0] - GREEN[0]) * k) | 0;
+            const gc = (GREEN[1] + (MINT[1] - GREEN[1]) * k) | 0;
+            const b = (GREEN[2] + (MINT[2] - GREEN[2]) * k) | 0;
+            ctx.fillStyle = 'rgba(' + r + ',' + gc + ',' + b + ',' + a.toFixed(3) + ')';
+            ctx.fillRect(g.x, g.y + z * DISP, DOT, DOT);
+        }
+    }
+
+    function frame(now) {
+        if (!last) last = now;
+        t += Math.min((now - last) / 1000, 0.05);
+        last = now;
+        mouse.sx += (mouse.x - mouse.sx) * 0.06;
+        mouse.sy += (mouse.y - mouse.sy) * 0.06;
+        draw(t);
+        rafId = requestAnimationFrame(frame);
+    }
+    function start() {
+        if (running) return;
+        running = true;
+        last = 0;
+        rafId = requestAnimationFrame(frame);
+    }
+    function stop() {
+        running = false;
+        cancelAnimationFrame(rafId);
+    }
+
+    // Scroll dim: fade toward 25% as content sections take over
+    function applyScrollDim() {
+        canvas.style.opacity = Math.max(0.25, 1 - window.scrollY / 700).toFixed(3);
+    }
+
+    window.addEventListener('resize', () => {
+        clearTimeout(resize._t);
+        resize._t = setTimeout(resize, 150);
+    }, { passive: true });
+    window.addEventListener('scroll', applyScrollDim, { passive: true });
+    window.addEventListener('mousemove', e => {
+        mouse.x = e.clientX / W;
+        mouse.y = e.clientY / H;
+    }, { passive: true });
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stop(); else start();
+    });
+
+    resize();
+    applyScrollDim();
+    if (!reducedMotion) start();
+})();
