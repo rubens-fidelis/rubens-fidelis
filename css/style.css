@@ -232,7 +232,6 @@ section { padding: 0 16px; }
 
 /* ——— Hero Section ——— */
 .hero {
-    position: relative;
     min-height: 100vh;
     min-height: 100svh;
     display: flex;
@@ -240,18 +239,6 @@ section { padding: 0 16px; }
     padding-top: 52px;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-/* Soft scrim behind the hero text column — keeps copy legible over the wave texture */
-.hero::before {
-    content: '';
-    position: absolute;
-    inset: -4% -8%;
-    background: radial-gradient(ellipse 60% 58% at 30% 40%,
-        rgba(10, 11, 13, 0.74),
-        rgba(10, 11, 13, 0.44) 58%,
-        transparent 80%);
-    pointer-events: none;
 }
 
 .hero-body {
