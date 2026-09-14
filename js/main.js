@@ -207,6 +207,7 @@ if (hamburger && navOverlay && overlayClose) {
     const GREEN = [0, 255, 102], MINT = [234, 255, 242];
 
     let W = 0, H = 0, grid = [];
+    let pScale = 1, aComp = 1;          // particle scale: <1 on small viewports (finer dust)
     let rafId = 0, running = false, t = 0, last = 0;
     // Start off-screen so the cursor swell is inactive until a real mousemove
     const mouse = { x: -1, y: -1, sx: -1, sy: -1 };
@@ -217,18 +218,24 @@ if (hamburger && navOverlay && overlayClose) {
         const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
         W = window.innerWidth;
         H = window.innerHeight;
+        // Small viewports: shrink particle geometry so dots read as fine dust,
+        // not oversized blobs (clamps to 1 at >=1100px — desktop unchanged)
+        pScale = Math.max(0.5, Math.min(1, W / 1100));
+        aComp = Math.pow(1 / pScale, 0.35);             // slight alpha lift for smaller dots
+        const spacing = SPACING * Math.max(0.75, pScale);
+        const jitter = JITTER * Math.max(0.75, pScale);
         canvas.width = W * dpr;
         canvas.height = H * dpr;
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         grid = [];
-        for (let y = 0; y <= H + SPACING; y += SPACING)
-            for (let x = 0; x <= W + SPACING; x += SPACING)
+        for (let y = 0; y <= H + spacing; y += spacing)
+            for (let x = 0; x <= W + spacing; x += spacing)
                 grid.push({
-                    x: x + rand(-JITTER, JITTER),
-                    y: y + rand(-JITTER, JITTER),
-                    s: rand(0.6, 1.35),                     // sub-pixel sizes → particle dust
-                    b: rand(0.55, 1),                       // per-particle brightness
-                    o1: rand(-6, 6), o2: rand(-6, 6),       // crest cluster offsets
+                    x: x + rand(-jitter, jitter),
+                    y: y + rand(-jitter, jitter),
+                    s: rand(0.6, 1.35) * pScale,        // sub-pixel sizes → particle dust
+                    b: rand(0.55, 1),                   // per-particle brightness
+                    o1: rand(-6, 6) * pScale, o2: rand(-6, 6) * pScale,  // crest cluster offsets
                     ph: rand(0, 6.28)
                 });
         if (reducedMotion) draw(0);
@@ -254,7 +261,7 @@ if (hamburger && navOverlay && overlayClose) {
             const z = elevation(g.x, g.y, st + g.ph * 0.15, mx, my + yOff);
             const m = (z + 1) / 2;                              // 0..1 coverage everywhere
             const twinkle = 0.75 + 0.25 * Math.sin(tt * 1.8 + g.ph * 7);
-            const a = (BASE_A + MAX_A * Math.pow(m, GAMMA)) * g.b * twinkle;
+            const a = (BASE_A + MAX_A * Math.pow(m, GAMMA)) * g.b * twinkle * aComp;
             if (a < 0.018) continue;
             const k = Math.min(m * MIX_K, 1);
             const r = (GREEN[0] + (MINT[0] - GREEN[0]) * k) | 0;
