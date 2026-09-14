@@ -201,9 +201,9 @@ if (hamburger && navOverlay && overlayClose) {
     const ctx = canvas.getContext('2d');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Wave tuning (matches the approved preview: Wave I · subtle, 2× speed)
+    // Wave tuning — subtle intensity, 2× tempo, organic particle scatter
     const SPEED = 2;
-    const SPACING = 9, BASE_A = 0.02, MAX_A = 0.30, GAMMA = 2.4, MIX_K = 0.85, DISP = 5, DOT = 1.6;
+    const SPACING = 8, JITTER = 3.5, BASE_A = 0.05, MAX_A = 0.55, GAMMA = 1.6, MIX_K = 0.85, DISP = 5;
     const GREEN = [0, 255, 102], MINT = [234, 255, 242];
 
     let W = 0, H = 0, grid = [];
@@ -223,7 +223,14 @@ if (hamburger && navOverlay && overlayClose) {
         grid = [];
         for (let y = 0; y <= H + SPACING; y += SPACING)
             for (let x = 0; x <= W + SPACING; x += SPACING)
-                grid.push({ x, y, ph: rand(0, 6.28) });
+                grid.push({
+                    x: x + rand(-JITTER, JITTER),
+                    y: y + rand(-JITTER, JITTER),
+                    s: rand(0.6, 1.35),                     // sub-pixel sizes → particle dust
+                    b: rand(0.55, 1),                       // per-particle brightness
+                    o1: rand(-6, 6), o2: rand(-6, 6),       // crest cluster offsets
+                    ph: rand(0, 6.28)
+                });
         if (reducedMotion) draw(0);
     }
 
@@ -246,14 +253,20 @@ if (hamburger && navOverlay && overlayClose) {
             const g = grid[i];
             const z = elevation(g.x, g.y, st + g.ph * 0.15, mx, my + yOff);
             const m = (z + 1) / 2;                              // 0..1 coverage everywhere
-            const a = BASE_A + MAX_A * Math.pow(m, GAMMA);
-            if (a < 0.03) continue;
+            const twinkle = 0.75 + 0.25 * Math.sin(tt * 1.8 + g.ph * 7);
+            const a = (BASE_A + MAX_A * Math.pow(m, GAMMA)) * g.b * twinkle;
+            if (a < 0.018) continue;
             const k = Math.min(m * MIX_K, 1);
             const r = (GREEN[0] + (MINT[0] - GREEN[0]) * k) | 0;
             const gc = (GREEN[1] + (MINT[1] - GREEN[1]) * k) | 0;
             const b = (GREEN[2] + (MINT[2] - GREEN[2]) * k) | 0;
+            const y = g.y + z * DISP;
             ctx.fillStyle = 'rgba(' + r + ',' + gc + ',' + b + ',' + a.toFixed(3) + ')';
-            ctx.fillRect(g.x, g.y + z * DISP, DOT, DOT);
+            ctx.fillRect(g.x, y, g.s, g.s);
+            if (m > 0.7) {                                      // crest density: extra motes pile up
+                ctx.fillStyle = 'rgba(' + r + ',' + gc + ',' + b + ',' + (a * 0.45).toFixed(3) + ')';
+                ctx.fillRect(g.x + g.o1, y + g.o2, g.s * 0.8, g.s * 0.8);
+            }
         }
     }
 
